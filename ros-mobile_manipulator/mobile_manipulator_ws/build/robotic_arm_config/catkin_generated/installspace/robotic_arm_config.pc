@@ -1,0 +1,8 @@
+prefix=/home/burhanok/mobile_manipulator_ws/install
+
+Name: robotic_arm_config
+Description: Description of robotic_arm_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

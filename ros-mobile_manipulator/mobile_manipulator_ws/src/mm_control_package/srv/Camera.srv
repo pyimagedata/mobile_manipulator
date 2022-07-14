@@ -1,0 +1,5 @@
+string camera_info
+
+---
+
+float64[] location

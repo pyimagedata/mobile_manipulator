@@ -1,0 +1,43 @@
+<launch>
+
+  <arg name="map_file" default="$(find mm_navigation)/map/farming.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_a" default="0.0"/>
+
+
+
+  <include file="$(find mm_navigation)/launch/includes/amcl.launch.xml">
+
+    <arg name="initial_pose_x" value="0"/>
+    <arg name="initial_pose_y" value="0"/>
+    <arg name="initial_pose_a" value="0"/>
+
+<!--
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+-->
+  </include>
+
+  <include file="$(find mm_navigation)/launch/includes/move_base.launch.xml"/>
+
+  <arg name="rvizconfig" default="$(find mm_navigation)/config/rviz.rviz" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+  <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+
+  <arg name="rviz_config" default="" />
+  <arg     if="$(eval rviz_config=='')" name="command_args" value="" />
+  <arg unless="$(eval rviz_config=='')" name="command_args" value="-d $(arg rviz_config)" />
+
+  <node name="$(anon rviz)" launch-prefix="$(arg launch_prefix)" pkg="rviz" type="rviz" respawn="false"
+        args="$(arg command_args)" output="screen">
+  </node>
+
+</launch>

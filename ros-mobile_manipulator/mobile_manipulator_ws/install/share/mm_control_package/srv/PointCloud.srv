@@ -1,0 +1,6 @@
+float64[] location
+
+---
+
+float64[] position
+float64[] quaternion

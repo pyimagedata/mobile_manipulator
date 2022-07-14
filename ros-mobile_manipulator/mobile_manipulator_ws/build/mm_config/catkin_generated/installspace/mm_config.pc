@@ -1,0 +1,8 @@
+prefix=/home/burhanok/mobile_manipulator_ws/install
+
+Name: mm_config
+Description: Description of mm_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

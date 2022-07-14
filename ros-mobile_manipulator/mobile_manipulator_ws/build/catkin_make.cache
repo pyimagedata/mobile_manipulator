@@ -1,0 +1,2 @@
+diff_wheeled_robot_control:learning_tf:mm_config:mm_control_package:mm_description:mm_navigation
+-DCATKIN_DEVEL_PREFIX=/home/burhanok/mobile_manipulator_ws/devel -DCMAKE_INSTALL_PREFIX=/home/burhanok/mobile_manipulator_ws/install -G Unix Makefiles

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="navigation_server" pkg="mm_control_package" type="navigation_server.py" output="screen"/>
+    <node name="camera_server" pkg="mm_control_package" type="camera_server.py" output="screen"/>
+    <node name="go_server" pkg="mm_control_package" type="go_server.py" output="screen"/>
+    <node name="pointcloud_server" pkg="mm_control_package" type="pointcloud_server.py" output="screen"/>
+</launch>
