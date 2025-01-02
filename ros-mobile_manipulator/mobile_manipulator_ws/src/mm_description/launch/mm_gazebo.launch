@@ -1,0 +1,13 @@
+<launch>
+  <arg name="model" default="$(find mm_description)/urdf/robotic_arm.urdf"/>  
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <node args="-param robot_description -urdf -model mm_bot" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="/home/burhanok/mobile_manipulator_ws/src/mm_navigation/worlds/first.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+</launch>

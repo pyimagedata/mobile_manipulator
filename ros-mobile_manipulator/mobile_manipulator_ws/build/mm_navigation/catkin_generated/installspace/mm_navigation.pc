@@ -1,0 +1,8 @@
+prefix=/home/burhanok/mobile_manipulator_ws/install
+
+Name: mm_navigation
+Description: Description of mm_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

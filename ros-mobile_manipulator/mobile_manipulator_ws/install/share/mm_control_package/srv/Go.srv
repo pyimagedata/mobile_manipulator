@@ -1,0 +1,6 @@
+float64[] position
+float64[] quaternion
+
+---
+
+bool go_to_target
