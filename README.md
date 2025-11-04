@@ -105,8 +105,8 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Acknowledgments
 
-- Thanks to the open-source community for inspiration and contributions.
-- Special thanks to [Your Organization or Contributors].
+- This work was completed under the guidance and valuable support of our academic advisor.
+- We would also like to thank the open-source community for their inspiration and contributions.
 
 ## Contact
 
